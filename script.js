@@ -37,12 +37,12 @@ function selecionarOpcao(pontuacao) {
     rhea.pontos += pontuacao.rhea;
     jax.pontos += pontuacao.jax;
 
-    // Vai para a próxima pergunta
+  
     proximaPergunta();
 }
 
 
-// Função para avançar para a próxima pergunta ou mostrar o resultado
+
 function proximaPergunta() {
     perguntaAtual++;
     if (perguntaAtual < perguntas.length) {
@@ -52,12 +52,11 @@ function proximaPergunta() {
     }
 }
 
-// Função para calcular e exibir o resultado final
 function exibirResultado() {
     telaQuestionario.style.display = 'none';
     telaResultado.style.display = 'block';
 
-    // Lógica condicional para encontrar o personagem com maior pontuação
+
     let personagemFinal = kai;
     if (rhea.pontos > personagemFinal.pontos) {
         personagemFinal = rhea;
@@ -66,21 +65,42 @@ function exibirResultado() {
         personagemFinal = jax;
     }
 
-    // Exibe o resultado na tela
+   
     document.getElementById('resultado-titulo').textContent = `Você é ${personagemFinal.nome}!`;
     document.getElementById('resultado-imagem').src = personagemFinal.imagem;
     document.getElementById('resultado-descricao').textContent = personagemFinal.explicacaoResultado + ` (Sua pontuação final foi: Kai ${kai.pontos}, Rhea ${rhea.pontos}, Jax ${jax.pontos})`;
 }
 
-// Função para reiniciar o quiz
+
 function reiniciarQuiz() {
-    // Reseta os pontos e a pergunta atual
+   
     perguntaAtual = 0;
     kai.pontos = 0;
     rhea.pontos = 0;
     jax.pontos = 0;
 
-    // Volta para a tela inicial
+
     telaResultado.style.display = 'none';
     telaInicial.style.display = 'block';
 }
+
+const perguntas = [
+    {
+        pergunta: "Qual seria sua prioridade numa missão?",
+        opcoes: [
+            { texto: "Infiltrar e coletar dados sem ser notado", pontuacao: { kai: 1, rhea: 3, jax: 2 } },
+            { texto: "Atacar diretamente o inimigo com força total", pontuacao: { kai: 1, rhea: 2, jax: 3 } },
+            { texto: "Criar uma estratégia inteligente para o sucesso", pontuacao: { kai: 3, rhea: 1, jax: 2 } }
+        ]
+    },
+    {
+        pergunta: "Como você passa seu tempo livre?",
+        opcoes: [
+            { texto: "Programando novos códigos e hacks", pontuacao: { kai: 3, rhea: 1, jax: 2 } },
+            { texto: "Explorando lugares escondidos da cidade", pontuacao: { kai: 1, rhea: 3, jax: 2 } },
+            { texto: "Treinando combate e agilidade", pontuacao: { kai: 1, rhea: 2, jax: 3 } }
+        ]
+    },
+
+ 
+];
