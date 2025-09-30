@@ -1,0 +1,60 @@
+body {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.tela {
+    background-color: #16213e;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    width: 80%;
+    max-width: 600px;
+}
+
+h1, h2 {
+    color: #00ffff; /* Azul elétrico, cor do Kai */
+}
+
+button {
+    background-color: #00ffff;
+    color: #1a1a2e;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+button:hover {
+    box-shadow: 0 0 10px #00ffff;
+}
+
+#opcoes-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #0f3460;
+    color: #e0e0e0;
+}
+
+#opcoes-container button:hover {
+    background-color: #16213e;
+    border: 1px solid #00ffff;
+    box-shadow: none;
+}
+
+#resultado-imagem {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 3px solid #00ffff;
+    margin-top: 1em;
+}
